@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Array In-Place</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      #inputArray {
+        width: 200px;
+        padding: 5px;
+      }
+      button {
+        padding: 5px 10px;
+        margin-top: 10px;
+      }
+      h3 {
+        margin-top: 20px;
+      }
+      #result {
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Reverse the Order of Elements in an Array</h2>
+
+    <label for="inputArray">Enter numbers (comma-separated): </label>
+    <input type="text" id="inputArray" placeholder="e.g., 1,2,3,4,5" />
+    <br /><br />
+
+    <button onclick="reverseArray()">Reverse Array</button>
+
+    <h3>Reversed Array:</h3>
+    <p id="result"></p>
+
+    <script>
+      function reverseArray() {
+        const input = document.getElementById("inputArray").value;
+        const numArray = input.split(",").map(Number);
+        if (numArray.length === 0 || numArray.some(isNaN)) {
+          document.getElementById("result").textContent =
+            "Please enter valid numbers!";
+          return;
+        }
+        numArray.reverse();
+        document.getElementById(
+          "result"
+        ).textContent = `Reversed Array: ${numArray.join(", ")}`;
+      }
+    </script>
+  </body>
+</html>
